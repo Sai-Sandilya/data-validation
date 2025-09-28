@@ -1,0 +1,10 @@
+FROM bitnami/spark:3.4.1
+
+USER root
+
+WORKDIR /opt/spark-apps
+
+COPY . /opt/spark-apps
+
+ENV SPARK_HOME=/opt/bitnami/spark
+ENV PATH=$SPARK_HOME/bin:$PATH
