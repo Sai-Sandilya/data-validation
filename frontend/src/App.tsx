@@ -1,11 +1,8 @@
-import React, { useState } from "react";
-import ConfigForm from "./components/ConfigForm";
-import TableSelector from "./components/TableSelector";
-import ReportTable from "./components/ReportTable";
+import { useState } from "react";
+import OriginalValidationPage from "./pages/OriginalValidationPage";
 import SQLQuery from "./components/SQLQuery";
 
 function App() {
-  const [refreshCount, setRefreshCount] = useState(0);
   const [activeTab, setActiveTab] = useState("validation");
 
   return (
@@ -43,11 +40,7 @@ function App() {
       {/* Tab Content */}
       <div className="max-w-6xl mx-auto">
         {activeTab === "validation" && (
-          <div className="space-y-6">
-            <ConfigForm />
-            <TableSelector onValidationComplete={() => setRefreshCount(refreshCount + 1)} />
-            <ReportTable refreshTrigger={refreshCount} />
-          </div>
+          <OriginalValidationPage />
         )}
 
         {activeTab === "sql" && (
@@ -64,7 +57,7 @@ function App() {
                 </ul>
               </div>
             </div>
-            <SQLQuery refreshTrigger={refreshCount} />
+            <SQLQuery refreshTrigger={0} />
           </div>
         )}
       </div>

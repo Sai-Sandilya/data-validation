@@ -2,4 +2,18 @@ fastapi
 uvicorn[standard]
 pymysql
 mysql-connector-python
-pyspark
+pyspark    #3.3.4
+pydantic
+python-dotenv
+requests
+psutil
+
+# Universal Database Support
+cx_Oracle              # Oracle database driver
+oracledb              # Newer Oracle database driver
+psycopg2-binary       # PostgreSQL database driver
+pyodbc                # SQL Server database driver
+pymssql               # Alternative SQL Server driver (no ODBC required)
+sqlalchemy            # Universal database ORM
+
+#hadoop #3.3.6
